@@ -1,0 +1,41 @@
+#User Input
+Employee = input("Enter the employee's name: ")
+
+Hours = eval(input("Enter the number of hours worked in the week by the employee: "))
+
+Rate = eval(input("Enter the employee's hourly pay rate: "))
+
+Federal = eval(input("Enter the federal tax withholding rate: "))
+
+State = eval(input("Enter the sate tax withholding rate: "))
+
+#Calculations
+
+Gross = Hours*Rate
+
+FW = (Gross)*(Federal)
+
+SW = (Gross)*(State)
+
+Deduct = SW+FW
+
+Net = Gross-Deduct
+
+#Display Results
+print("Employee Name: ", Employee)
+
+print("Hours Worked: ", format(Hours, '.2f'))
+
+print("Pay Rate: $ ", format(Rate, '.2f'))
+
+print("Gross Pay: ", format(Gross, '.2f'))
+
+print("Deductions: ")
+
+print("\tFederal Withholding(",format(Federal, '.2%'),"):", format(FW, '.2f'))
+
+print("\tState Withholding(",format(State, '.2%'),"):", format(SW, '.2f'))
+
+print("\tTotal Deduction : ", format(Deduct, '.2f'))
+
+print("Net Pay: ", format(Net, '.2f'))
